@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script type="text/javascript"
+        src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <title>Document</title>
+    <style>
+        .container {
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+            border: 1px solid green;
+        }
+
+        .col-lg-11 input[type=text] {
+            width: 40%;
+        }
+
+        .col-lg-11 {
+            margin-bottom: 2rem;
+            padding-left: 5rem;
+        }
+
+        .col-lg-12 {
+            text-align: center;
+        }
+
+        .label-error {
+            color: red;
+            margin-left: 1rem;
+        }
+
+        .red-star {
+            color: red;
+        }
+        .col-lg-1{
+            padding: 0 0;
+        }
+        .row{
+            padding-left: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" method="get" id="demoForm">
+            <div class="row">
+                <div class="col-lg-1">
+                    <span>Name</span><span class="red-star">*</span>
+                </div>
+                <div class="col-lg-11">
+                    <input type="text" name="name" id="name">
+                    <label for="name" generated="true" class="error label-error"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">
+                    <span>Address:</span>
+                </div>
+                <div class="col-lg-11">
+                    <input type="text" name="address" id="address">
+                    <label for="address" generated="true" class="error label-error"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">
+                    <span>ZipCode:</span><span class="red-star">*</span>
+                </div>
+                <div class="col-lg-11">
+                    <input type="text" name="zipcode" id="zipcode">
+                    <label for="zipcode" generated="true" class="error label-error"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">
+                    <span>Country:</span><span class="red-star">*</span>
+                </div>
+                <div class="col-lg-11">
+                    <select name="country" id="country">
+                        <option value=""></option>
+                        <option value="vn">vietnam</option>
+                        <option value="usa">USA</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="italia">Italia</option>
+                    </select>
+                    <label for="country" generated="true" class="error label-error"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">
+                    <span>Gender:</span><span class="red-star">*</span>
+                </div>
+                <div class="col-lg-11">
+                    <input type="radio" name="sex" value="male">
+                    <span>Male</span>
+                    <input type="radio" name="sex" value="famale">
+                    <span>Famale</span>
+                    <label for="sex" generated="true" class="error label-error"></label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1">
+                    <span>Preferences:</span><span class="red-star">*</span>
+                </div>
+                <div class="col-lg-11">
+                    <input type="radio" name="preferences" value="Red">
+                    <span>Red</span>
+                    <input type="radio" name="preferences" value="Green">
+                    <span>Green</span>
+                    <input type="radio" name="preferences" value="Blue">
+                    <span>Blue</span>
+                    <label for="preferences" generated="true" class="error label-error"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">
+                    <span>Email:</span><span class="red-star">*</span>
+                </div>
+                <div class="col-lg-11">
+                    <input type="text" name="email" id="email">
+                    <label for="email" generated="true" class="error label-error"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">
+                    <span>Phone:</span>
+                </div>
+                <div class="col-lg-11">
+                    <input type="text" name="phone" id="phone">
+                    <label for="phone" generated="true" class="error label-error"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">
+                    <span>Password: </span><span class="red-star">*</span>
+                </div>
+                <div class="col-lg-11">
+                    <input type="password" name="password" id="password">
+                    <label for="password" generated="true" class="error label-error"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">
+                    <span>Verify: </span><span class="red-star">*</span>
+                </div>
+                <div class="col-lg-11">
+                    <input type="password" name="verify_pass" id="verify_pass">
+                    <label for="verify_pass" generated="true" class="error label-error"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        $().ready(function () {
+            $("#demoForm").validate({
+                rules: {
+                    name: {
+                        required: true,
+                        lettersonly: true,
+                    },
+                    address: {
+                        required: true,
+                        lettersonly: true,
+                    },
+                    phone:{
+                        required: true,
+                        maxlength: 12,
+                        minlength: 10,
+                        digits: true,
+                    },
+                    password: {
+                        required: true,
+                        maxlength: 8,
+                        minlength: 6
+                    },
+                    verify_pass: {
+                        required: true,
+                        equalTo : "#password",
+                    },
+                    country: {
+                        required: true,
+                    },
+                    zipcode: {
+                        required: true,
+                        digits: true
+
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    sex: {
+                        required: true,
+                    },
+
+                },
+                messages: {
+                    name: {
+                        required: "Required",
+                        
+                    },
+                    address: {
+                        required: "Required",
+                        
+                    },
+                    phone:{
+                        required: "Required",
+                        maxlength: "Must be of length 10 to 12",
+                        minlength: "Must be of length 10 to 12",
+                        digits: "must be number",
+                    },
+                    password: {
+                        required: "Required",
+                        maxlength: "Must be of length 6 to 8",
+                        minlength: "Must be of length 6 to 8"
+                    },
+                    verify_pass: {
+                        required: "Required",
+                        equalTo : "must equal to password",
+                    },
+                    country: {
+                        required: "Required.Must select a country",
+                    },
+                    zipcode: {
+                        required: "Required",
+                        digits: "must be numberic only"
+
+                    },
+                    email: {
+                        required: "Required",
+                        email: "must be a valid email"
+                    },
+                    sex: {
+                        required: "Required",
+                    },
+
+                },
+            });
+            jQuery.validator.addMethod("lettersonly", function (value, element) {
+                return this.optional(element) || /^[a-z]+$/i.test(value);
+            }, "Alphabet only");
+        });
+    </script>
+</body>
+
+</html>

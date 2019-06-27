@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <title>final test b1</title>
+    <style>
+        .container h2 {
+            text-align: center;
+            color: red;
+        }
+        .row{
+            margin-left: 0px;
+        }
+        span{
+           color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>THỰC HIỆN PHÉP TÍNH</h2>
+        <form action="/action_page.php" class="validated">
+            <div class="form-group">
+              <label for="num1">Nhập số thứ nhất:</label>
+              <input type="number" class="form-control" id="num1" name="num1" required>
+              <!-- <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div> -->
+            </div>
+            <div class="form-group">
+              <label for="num2">Nhập số thứ hai:</label>
+              <input type="number" class="form-control" id="num2" name="num2" required>
+              <!-- <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div> -->
+            </div>
+            <button type="button" onclick="calculator('num1','num2','plus')" class="btn btn-primary">Cộng(+)</button>
+            <button type="button" onclick="calculator('num1','num2','minus')" class="btn btn-primary">Trừ(-)</button>
+            <button type="button" onclick="calculator('num1','num2','multiply')" class="btn btn-primary">Nhân(*)</button>
+            <button type="button" onclick="calculator('num1','num2','divide')" class="btn btn-primary">Chia(/)</button>
+            <button type="button" onclick="calculator('num1','num2','hat')" class="btn btn-primary">Mũ(a^b)</button>
+            <div class="row">
+                <div class="col-log-3">
+                    <span>Kết quả: </span>
+                </div>
+                <div class="col-log-9">
+                    <p id="result"></p>
+                </div>
+            </div>
+          </form>
+    </div>
+    
+</body>
+
+</html>

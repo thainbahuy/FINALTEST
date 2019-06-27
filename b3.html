@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <title>Convert money</title>
+    <style>
+        .container {
+            padding: 0 2rem;
+            border: solid 1px black;
+        }
+
+        .table-convert {
+            display: flex;
+            padding: 0 0;
+        }
+
+        .table-convert li {
+            padding-left: 2rem;
+        }
+
+        select {
+            margin-right: 2rem;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="table-convert" type="none">
+            <li>
+                <p>Amount</p>
+                <input id="money" type="number">
+            </li>
+            <li>
+                <p>From currentcy</p>
+                <select id="frommoney">
+                    <option id="frommoney-VND" value="1">VietNam</option>
+                    <option id="frommoney-EUR" value="26717">EUR</option>
+                    <option id="frommoney-INR" value="348">INR</option>
+                    <option id="frommoney-JPY" value="213">JPY</option>
+                    <option id="frommoney-RUB" value="404">RUB</option>
+                    <option id="frommoney-SGD" value="17074">SGD</option>
+                    <option id="frommoney-THB" value="747">THB</option>
+                    <option id="frommoney-USD" value="23450">USD</option>
+                </select>
+            </li>
+            <li>
+                <p>To currentcy</p>
+                <select id="tomoney">
+                    <option id="tomoney-VND" value="1">VietNam</option>
+                    <option id="tomoney-EUR" value="26717">EUR</option>
+                    <option id="tomoney-INR" value="348">INR</option>
+                    <option id="tomoney-JPY" value="213">JPY</option>
+                    <option id="tomoney-RUB" value="404">RUB</option>
+                    <option id="tomoney-SGD" value="17074">SGD</option>
+                    <option id="tomoney-THB" value="747">THB</option>
+                    <option id="tomoney-USD" value="23450">USD</option>
+                </select>
+                <button onclick="convertMomney('money','frommoney','tomoney')">Convert</button>
+            </li>
+        </ul>
+        <div class="row">
+            <div class="col-log-3">
+                <span>Kết quả: </span>
+            </div>
+            <div class="col-log-9">
+                <p id="result"> </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inherits</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(fn, ln, gd, bd) {
+                this.hodem = fn;
+                this.ten = ln;
+                this.gioitinh = gd;
+                this.ngaysinh = bd;
+            }
+            fullName() {
+                console.log(this.hodem + ' ' + this.ten);
+            }
+            personInfor() {
+                console.log(this.hodem);
+                console.log(this.ten);
+                console.log(this.gioitinh);
+                console.log(this.ngaysinh);
+            }
+        }
+
+        class Student extends Person {
+            constructor(fn, ln, gd, bd, lop, khoa, nganh) {
+                super(fn, ln, gd, bd);
+                this.lop = lop;
+                this.khoa = khoa;
+                this.nganh = nganh;
+            }
+            setDiemMon1(diem1) {
+                Student.prototype.diemmon1 = diem1;
+            }
+            setDiemMon2(diem2) {
+                Student.prototype.diemmon2 = diem2;
+            }
+            setDiemMon3(diem3) {
+                Student.prototype.diemmon3 = diem3;
+            }
+            getDiemTrungBinh() {
+                return (this.diemmon1 + this.diemmon2 + this.diemmon3) / 3;
+            }
+            xepLoai(dtb) {
+                if (dtb > 9) console.log('xuat sac');
+                else if (dtb >= 8) console.log('gioi');
+                    else if (dtb >= 7) console.log('kha');
+                        else if (dtb >=5 ) console.log('trung binh');
+                            else console.log('yeu');
+            }
+            thongTinDiem(){
+                console.log('diem mon 1: '+this.diemmon1);
+                console.log('diem mon 2: '+this.diemmon2);
+                console.log('diem mon 3: '+this.diemmon3);
+                console.log('diem tb: '+this.getDiemTrungBinh());
+            }
+            studentInfor(){
+                this.personInfor();
+                this.thongTinDiem();
+                this.xepLoai(this.getDiemTrungBinh());
+            }    
+
+        }
+        class Teacher extends Person{
+            constructor(fn, ln, gd, bd ,khoa,bomon,hocvan){
+                super(fn, ln, gd, bd);
+                this.khoa = khoa;
+                this.bomon = bomon;
+                this.hocvan = hocvan;
+            }
+            setThamNien(t_nien){
+                Teacher.prototype.thamnien = t_nien;
+            }
+            setsongay_lamviec(s_ngay){
+                Teacher.prototype.songay_lamviec = s_ngay;
+            }
+            luongcoban(){
+                if(this.hocvan == 'DH') return 2.34 * 1500000;
+                if(this.hocvan == 'CD') return 2.10 * 1500000;
+                if(this.hocvan == 'TC') return 1.86 * 1500000;
+            }
+            thunhap_thamnien(){
+                let thunhap_thamnien = 0;
+                if(this.thamnien >=3 ){
+                    let temp = parseInt(this.thamnien) / 3;
+                    for (let index = 0; index < temp; index++) {
+                        thunhap_thamnien = thunhap_thamnien+(this.luongcoban()*0.03);
+                    }
+                }
+                return thunhap_thamnien;
+            }
+            Thunhap_theosongay_lamviec(){
+                return parseInt(this.songay_lamviec) * 200000;
+            }
+            Tong_thunhap(){
+                return this.Thunhap_theosongay_lamviec() + this.luongcoban() + this.thunhap_thamnien();
+            }
+            ThongtinGiaovien(){
+                this.personInfor();
+                console.log(this.khoa);
+                console.log(this.bomon);
+                console.log(this.hocvan);
+                console.log(this.Tong_thunhap());
+            }
+        }
+
+        // let st1 = new Student('huy', 'thai', 'male', '1996', 'tpm1', 'dtqt', 'cntt');
+        // console.log(st1.ten);
+        // console.log(st1.nganh);
+        // st1.setDiemMon1(9);
+        // st1.setDiemMon2(9);
+        // st1.setDiemMon3(8);
+        // st1.studentInfor();
+
+        let tc = new Teacher('huy', 'thai', 'male', '1996', 'cntt', 'c++', 'DH');
+        tc.setThamNien(7);
+        console.log(tc.luongcoban());
+        console.log(tc.thunhap_thamnien());
+        tc.setsongay_lamviec(24);
+        tc.ThongtinGiaovien();
+
+    </script>
+</body>
+
+</html>
